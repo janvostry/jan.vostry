@@ -17,8 +17,7 @@ $large-shadow-size: 30px;
 
 @mixin BlurredFixedBackground()
 {
-	backdrop-filter: blur(12px);
-	background-color: RGBA(255, 255, 255, .5);
+	background-color: RGBA(255, 255, 255, .9);
 }
 
 @mixin WidthStretch()
