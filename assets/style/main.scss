@@ -23,8 +23,8 @@ $large-shadow-size: 30px;
 @mixin BlurredFixedBackground()
 {
 	@include FixedBackground();
-	backdrop-filter: blur(12px) brightness(1.125);
-	background-color: transparent;
+	backdrop-filter: blur(12px);
+	background-color: RGBA(255, 255, 255, .5);
 	background-image: url({{ '/assets/background/reflect.png' | absolute_url }});
 }
 
@@ -109,7 +109,7 @@ body
 			{
 				box-shadow: 0 0 ($large-shadow-size) -($large-shadow-size / 2) RGBA(0, 0, 0, .25);
 				
-				border: 1px solid rgba(0,0,0,.25);
+				border: 1px solid RGBA(0,0,0,.25);
 				border-radius: 0.5rem;
 				
 				@include BlurredFixedBackground();
