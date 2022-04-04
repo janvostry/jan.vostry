@@ -7,25 +7,18 @@
 $small-shadow-size: 15px;
 $large-shadow-size: 30px;
 
-@mixin FixedBackground()
+@mixin NormalFixedBackground()
 {
 	background-size: cover;
+	background-image: url({{ '/assets/background/sharp.jpg' | absolute_url }});
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 }
 
-@mixin NormalFixedBackground()
-{
-	@include FixedBackground();
-	background-image: url({{ '/assets/background/sharp.jpg' | absolute_url }});
-}
-
 @mixin BlurredFixedBackground()
 {
-	@include FixedBackground();
 	backdrop-filter: blur(12px);
 	background-color: RGBA(255, 255, 255, .5);
-	background-image: url({{ '/assets/background/reflect.png' | absolute_url }});
 }
 
 @mixin WidthStretch()
