@@ -1,0 +1,45 @@
+
+ - title: 'Jazyky'
+   high:
+    - 'C#'
+    - 'PHP'
+    - 'MySQL'
+   medium:
+    - 'JavaScript'
+    - 'VBA'
+    - 'Python'
+   low:
+    - 'Bash'
+    - 'C/C++'
+    - 'Haskell'
+    - 'VB.NET'
+
+ - title: 'Frameworky'
+   high:
+    - '.NET'
+    - 'Nette'
+   medium:
+    - 'Bootstrap'
+    - 'jQuery'
+   low:
+    - 'October'
+    - 'Symfony'
+
+ - title: 'Technologie'
+   high:
+    - 'CSS'
+    - 'HTML'
+    - 'GIT'
+    - 'GPG'
+   medium:
+    - 'Jekyll'
+    - 'LaTeX'
+    - 'Linux'
+    - 'MS Office'
+   low:
+    - 'Django'
+    - 'Docker'
+    - 'Electron'
+    - 'Less/Sass'
+    - 'Mercurial'
+    - 'Subversion'

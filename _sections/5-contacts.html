@@ -1,0 +1,110 @@
+---
+unicode: AÁBCČDĎEÉĚFGHChIÍJKLMNŇOÓPQRŘSŠTŤUÚŮVWXYÝZŽ
+layout:  section/row
+title:   Kontakty
+name:    contacts
+---
+
+<div class="col-lg">
+	<form class="card mb-4" id="contact" method="GET" action="https://cloud.vostry.name/send.php">
+		<h4 class="card-header">Kontakt</h4>
+		<div class="card-body">
+			<div class="" role="alert" id="result"></div>
+			<div class="input-group mb-1">
+				<div class="input-group-prepend">
+					<div class="input-group-text">
+						<i class="fa-solid fa-user"></i>
+					</div>
+				</div>
+				<input type="text" class="form-control" name="name" placeholder="Jméno">
+			</div>
+			<div class="input-group mb-1">
+				<div class="input-group-prepend">
+					<div class="input-group-text">
+						<i class="fa-solid fa-at"></i>
+					</div>
+				</div>
+				<input type="email" class="form-control" name="email" placeholder="Email">
+			</div>
+			<div class="input-group mb-1">
+				<div class="input-group-prepend">
+					<div class="input-group-text">
+						<i class="fa-solid fa-pen"></i>
+					</div>
+				</div>
+				<input type="text" class="form-control" name="subject" placeholder="Předmět">
+			</div>
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<div class="input-group-text">
+						<i class="fa-solid fa-message"></i>
+					</div>
+				</div>
+				<textarea class="form-control" name="message" placeholder="Zpráva" rows="9"></textarea>
+			</div>
+		</div>
+		<div class="card-footer text-right">
+			<button type="submit" id="submit" class="btn btn-primary">Odeslat</button>
+		</div>
+	</form>
+</div>
+
+<script>
+	$('#contact').submit(event => {
+		event.preventDefault();
+		$('#submit').prop("disabled", true);
+		
+		function result(color, text) {
+			$("#result").removeClass();
+			$("#result").addClass("alert");
+			$("#result").addClass("alert-" + color);
+			$('#result').text(text);
+			
+			$('#result').slideDown('slow', () => {
+				$('#submit').prop("disabled", false);
+			});
+		}
+		
+		$('#result').slideUp('slow', () => {
+			$.ajax({
+				url: $('#contact').attr('action'),
+				crossDomain: true,
+				data: $('#contact').serializeArray(),
+				dataType: 'jsonp',
+				success(data, status, xhr) {
+					console.log([data, status, xhr]);
+					if (data === "OK") {
+						result("success", "Formulář byl úspěšně odeslán.");
+					} else {
+						result("danger", "Formulář se nepodařilo odeslat.");
+					}
+				},
+				error(data, status, error) {
+					console.log([data, status, error]);
+					result("danger", "Formulář se nepodařilo odeslat.");
+				},
+			});
+		});
+	});
+</script>
+
+<div class="col-lg">
+	<article class="card mb-4">
+		<h4 class="card-header">Kde mne najdete</h4>
+		<div class="card-body">
+			<li class="list-group-item">Email: <a href="mailto:jan@vostry.name">{{ site.data.contacts.email }}</a></li>
+			<li class="list-group-item">LinkedIn: <a href="https://cz.linkedin.com/in/{{ site.data.contacts.linkedin | url_encode }}">{{ site.data.contacts.linkedin }}</a></li>
+		</div>
+	</article>
+	<article class="card mb-4">
+		<h4 class="card-header">Můj PGP klíč</h4>
+		<div class="card-body">
+			<a href="{{ '/assets/pgpkey/' | absolute_url | append: site.data.contacts.pgphash | append: '.asc' }}">
+				<img class="img-fluid" src="{{ '/assets/logo/gnupg.svg' | absolute_url }}" alt="GnuPG logo" />
+			</a>
+		</div>
+		<div class="card-footer text-muted text-center">
+			<code>{{ site.data.contacts.pgphash | hash }}</code>
+		</div>
+	</article>
+</div>

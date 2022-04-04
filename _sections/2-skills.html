@@ -1,0 +1,26 @@
+---
+unicode: AÁBCČDĎEÉĚFGHChIÍJKLMNŇOÓPQRŘSŠTŤUÚŮVWXYÝZŽ
+layout:  section/deck
+title:   Dovednosti
+name:    skills
+---
+
+{% for skill in site.data.skills %}
+	<div class="col-4">
+		<article class="card mb-4">
+			<h4 class="card-header">{{ skill.title }}</h4>
+			<div class="card-body">
+				{% for item in skill.high %}
+					<span class="badge badge-primary">{{ item }}</span>
+				{% endfor %}
+				{% for item in skill.medium %}
+					<span class="badge badge-secondary">{{ item }}</span>
+				{% endfor %}
+				{% for item in skill.low %}
+					<span class="badge badge-light">{{ item }}</span>
+				{% endfor %}
+			</div>
+		</article>
+	</div>
+	{% include util/breakpoint.html %}
+{% endfor %}

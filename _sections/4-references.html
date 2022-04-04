@@ -1,0 +1,21 @@
+---
+unicode: AÁBCČDĎEÉĚFGHChIÍJKLMNŇOÓPQRŘSŠTŤUÚŮVWXYÝZŽ
+layout:  section/deck
+title:   Reference
+name:    references
+---
+
+{% for reference in site.data.references %}
+	<div class="col-4">
+		<article class="card mb-4 overflow-hidden">
+			<img class="card-img-top" src="{{ '/assets/reference/' | absolute_url | append: reference.image }}" alt="{{ reference.title }}"/>
+			<h4 class="card-header">{{ reference.title }}</h4>
+			<div class="card-body">
+				<p class="card-text">{{ reference.desc }}</p>
+				<p class="card-text"><small class="text-muted">{{ reference.tech }}</small></p>
+			</div>
+			<div class="card-footer text-muted">{{ reference.date }}</div>
+		</article>
+	</div>
+	{% include util/breakpoint.html %}
+{% endfor %}

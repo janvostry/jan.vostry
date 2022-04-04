@@ -1,0 +1,9 @@
+
+url: 'https://jan.vostry.name'
+baseurl: ''
+
+plugins:
+ - jekyll-tidy
+
+collections:
+ - sections

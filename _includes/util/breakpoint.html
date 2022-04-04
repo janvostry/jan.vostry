@@ -1,0 +1,15 @@
+
+{% assign mod = forloop.index | modulo:1 %}
+{% if mod == 0 %}
+	<div class="w-100 d-none d-sm-block d-md-none"></div>
+{% endif %}
+
+{% assign mod = forloop.index | modulo:2 %}
+{% if mod == 0 %}
+	<div class="w-100 d-none d-md-block d-lg-none"></div>
+{% endif %}
+
+{% assign mod = forloop.index | modulo:3 %}
+{% if mod == 0 %}
+	<div class="w-100 d-none d-xl-block"></div>
+{% endif %}

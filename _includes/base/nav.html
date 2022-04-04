@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="navbar">
+	<a class="navbar-brand" href="#">{{ site.data.contacts.website }}</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navlist">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse justify-content-end" id="navlist">
+		<ul class="navbar-nav nav-pills">
+			{% for section in site.sections %}
+				{% if section.name != 'index' %}
+					<li class="nav-item"><a class="nav-link" href="#{{ section.name }}">{{ section.title }}</a></li>
+				{% endif %}
+			{% endfor %}
+		</ul>
+	</div>
+</nav>
