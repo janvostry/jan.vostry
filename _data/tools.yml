@@ -1,0 +1,4 @@
+
+hash:
+    search:  '[0-9A-F]{4}'
+    replace: '\0&nbsp;'

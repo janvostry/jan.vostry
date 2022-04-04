@@ -104,7 +104,7 @@ name:    contacts
 			</a>
 		</div>
 		<div class="card-footer text-muted text-center">
-			<code>{{ site.data.contacts.pgphash | hash }}</code>
+			<code>{{ site.data.contacts.pgphash | regex_replace: site.data.tools.hash.search, site.data.tools.hash.replace }}</code>
 		</div>
 	</article>
 </div>

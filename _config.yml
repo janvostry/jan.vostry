@@ -4,6 +4,7 @@ baseurl: ''
 
 plugins:
  - jekyll-tidy
+ - jekyll-regex-replace
 
 collections:
  - sections
