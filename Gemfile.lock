@@ -29,7 +29,6 @@ GEM
       pathutil (~> 0.9)
       rouge (>= 1.7, < 4)
       safe_yaml (~> 1.0)
-    jekyll-regex-replace (1.1.0)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
     jekyll-tidy (0.2.2)
@@ -65,7 +64,6 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 3.8.5)
-  jekyll-regex-replace
   jekyll-tidy
   tzinfo-data
 

@@ -99,12 +99,12 @@ name:    contacts
 	<article class="card mb-4">
 		<h4 class="card-header">Můj PGP klíč</h4>
 		<div class="card-body">
-			<a href="{{ '/assets/pgpkey/' | absolute_url | append: site.data.contacts.pgphash | append: '.asc' }}">
+			<a href="{{ '/assets/pgpkey/' | absolute_url | append: site.data.contacts.pgphash.short | append: '.asc' }}">
 				<img class="img-fluid" src="{{ '/assets/logo/gnupg.svg' | absolute_url }}" alt="GnuPG logo" />
 			</a>
 		</div>
 		<div class="card-footer text-muted text-center">
-			<code>{{ site.data.contacts.pgphash | regex_replace: site.data.tools.hash.search, site.data.tools.hash.replace }}</code>
+			<code>{{ site.data.contacts.pgphash.long | replace: ' ', '&nbsp;' }}</code>
 		</div>
 	</article>
 </div>
