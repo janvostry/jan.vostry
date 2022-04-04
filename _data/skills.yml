@@ -11,7 +11,6 @@
    low:
     - 'Bash'
     - 'C/C++'
-    - 'Haskell'
     - 'VB.NET'
 
  - title: 'Frameworky'
@@ -30,8 +29,8 @@
     - 'CSS'
     - 'HTML'
     - 'GIT'
-    - 'GPG'
    medium:
+    - 'GPG'
     - 'Jekyll'
     - 'LaTeX'
     - 'Linux'
