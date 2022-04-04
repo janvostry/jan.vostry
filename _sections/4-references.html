@@ -6,7 +6,7 @@ name:    references
 ---
 
 {% for reference in site.data.references %}
-	<div class="col-4">
+	<div class="col-lg-4">
 		<article class="card mb-4 overflow-hidden">
 			<img class="card-img-top" src="{{ '/assets/reference/' | absolute_url | append: reference.image }}" alt="{{ reference.title }}"/>
 			<h4 class="card-header">{{ reference.title }}</h4>
