@@ -71,6 +71,11 @@ body
 	{
 		@include TopmostShadow();
 		
+		.nav-link
+		{
+			padding: 0.5rem !important;
+		}
+		
 		.nav-link.active
 		{
 			color: #fff !important;
