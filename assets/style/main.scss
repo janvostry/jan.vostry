@@ -56,6 +56,11 @@ $large-shadow-size: 70px;
 	font-family: 'Source Code Pro', monospace;
 }
 
+html
+{
+	scroll-behavior: smooth;
+}
+
 body
 {
 	@include NormalFixedBackground();
