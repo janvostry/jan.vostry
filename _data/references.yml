@@ -47,7 +47,7 @@
    desc:  'Přesun starého webového obchodu na nový systém.'
    group: 'cdsm'
 
- - title: 'Pásky s.r.o.'
+ - title: 'Pásky.cz'
    image: 'pasky.png'
    link:  'https://www.pasky.cz/'
    date:  'Září 2021'
@@ -55,7 +55,7 @@
    desc:  'Modul statistik výroby do systému October s propojením na Helios.'
    group: 'pasky'
 
- - title: 'Pásky s.r.o.'
+ - title: 'Pásky.cz'
    image: 'pasky.png'
    link:  'https://www.pasky.cz/'
    date:  'Červenec 2021'
@@ -76,7 +76,7 @@
    link:  'https://omalovanky.cdsm.cz/'
    date:  'Prosinec 2019'
    tech:  'HTML, CSS, JS, PHP'
-   desc:  'Objednávkový systém pro omalovánky.'
+   desc:  'Objednávkový systém pro omalovánky a luštěniny.'
    group: 'cdsm'
 
  - title: 'Hotel Neptun'
@@ -119,7 +119,7 @@
    desc:  'Kompletní řešení systému pro správu obsahu.'
    group: 'cdsm'
 
- - title: 'Tommi Holding, spol. s r.o'
+ - title: 'Tommi Holding, spol. s r.o.'
    image: 'tommi.png'
    link:  'https://tommi.cz/'
    date:  'Srpen 2013'
