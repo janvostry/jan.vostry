@@ -44,6 +44,13 @@
  - title: 'Pásky s.r.o.'
    image: 'pasky.png'
    link:  'https://www.pasky.cz/'
+   date:  'Září 2021'
+   tech:  'HTML, CSS, JS, PHP, C#, October CMS'
+   desc:  'Modul statistik výroby do systému October s propojením na Helios'
+
+ - title: 'Pásky s.r.o.'
+   image: 'pasky.png'
+   link:  'https://www.pasky.cz/'
    date:  'Červenec 2021'
    tech:  'HTML, CSS, JS, PHP, C#, October CMS'
    desc:  'Modul kalkulátoru do systému October s propojením na Helios'
@@ -61,6 +68,13 @@
    date:  'Prosinec 2019'
    tech:  'HTML, CSS, JS, PHP'
    desc:  'Objednávkový systém pro omalovánky'
+
+ - title: 'Hotel Neptun'
+   image: 'neptun.png'
+   link:  'https://www.hotel-neptun.cz/'
+   date:  'Leden 2019'
+   tech:  'HTML, CSS, PHP, SQL'
+   desc:  'Kompletní řešení systému pro správu akcí'
 
  - title: 'Hasičský záchranný sbor Ústeckého kraje'
    image: 'hasici.png'
