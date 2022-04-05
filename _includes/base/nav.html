@@ -6,7 +6,7 @@
 	<div class="collapse navbar-collapse justify-content-end" id="navlist">
 		<ul class="navbar-nav nav-pills">
 			{% for section in site.sections %}
-				{% if section.name != 'index' %}
+				{% if section.name != 'none' and section.name != 'index' %}
 					<li class="nav-item"><a class="nav-link" href="#{{ section.name }}">{{ section.title }}</a></li>
 				{% endif %}
 			{% endfor %}
