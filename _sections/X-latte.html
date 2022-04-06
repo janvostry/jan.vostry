@@ -27,6 +27,7 @@ name:    none
             \hfill {{ reference.date }}
                 & \textbf({{ reference.title }}), \emph(\href({{ reference.link }})({{ reference.link }})) \\
                 & \footnotesize({{ reference.desc }}) \\
+                & \footnotesize(\emph({{ reference.tech | replace: '#', '\#' }})) \\
         \end(tabularx){% endif %}{% endfor %}
     {% endfor %}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
