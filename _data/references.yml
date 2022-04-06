@@ -19,7 +19,7 @@
    image: 'martin.png'
    link:  'https://www.mart-in.cz/'
    date:  'Březen 2022'
-   tech:  'HTML, CSS, JS, PHP, Nette'
+   tech:  'HTML, CSS, JS, PHP, SQL, Nette'
    desc:  'Systém pro objednávání potravin s dynamickým ceníkem dle místa dopravy.'
    group: 'cdsm'
 
@@ -27,7 +27,7 @@
    image: 'babyweb.png'
    link:  'https://babyweb.cdsm.cz/'
    date:  'Prosinec 2021'
-   tech:  'HTML, CSS, JS, PHP, Nette'
+   tech:  'HTML, CSS, JS, PHP, SQL, Nette'
    desc:  'Přesun starého webového obchodu na nový systém.'
    group: 'cdsm'
 
@@ -35,7 +35,7 @@
    image: 'jezisek.png'
    link:  'https://www.cdsm.cz/jeziskuvpozdrav/'
    date:  'Prosinec 2021'
-   tech:  'HTML, CSS, JS, PHP, Python'
+   tech:  'HTML, CSS, JS, PHP, SQL, Python'
    desc:  'Objednávkový systém pro pohlednice s výstupem do tiskového PDF.'
    group: 'cdsm'
 
@@ -43,7 +43,7 @@
    image: 'kalvos.png'
    link:  'https://www.kalvos.cz/'
    date:  'Říjen 2021'
-   tech:  'HTML, CSS, JS, PHP, Nette'
+   tech:  'HTML, CSS, JS, PHP, SQL, Nette'
    desc:  'Přesun starého webového obchodu na nový systém.'
    group: 'cdsm'
 
@@ -59,7 +59,7 @@
    image: 'pasky.png'
    link:  'https://www.pasky.cz/'
    date:  'Červenec 2021'
-   tech:  'HTML, CSS, JS, PHP, C#, October CMS'
+   tech:  'HTML, CSS, JS, PHP, SQL, C#, October CMS'
    desc:  'Modul kalkulátoru do systému October s propojením na Helios.'
    group: 'pasky'
 
@@ -67,7 +67,7 @@
    image: 'podlahy.png'
    link:  'https://www.podlahyprovsechny.cz/'
    date:  'Květen 2021'
-   tech:  'HTML, CSS, JS, PHP, Nette'
+   tech:  'HTML, CSS, JS, PHP, SQL, Nette'
    desc:  'Dynamický kalkulátor podlahových materiálů.'
    group: 'podlahy'
 
@@ -75,7 +75,7 @@
    image: 'omalovanky.png'
    link:  'https://omalovanky.cdsm.cz/'
    date:  'Prosinec 2019'
-   tech:  'HTML, CSS, JS, PHP'
+   tech:  'HTML, CSS, JS, PHP, SQL'
    desc:  'Objednávkový systém pro omalovánky a luštěniny.'
    group: 'cdsm'
 
