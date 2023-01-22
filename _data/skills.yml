@@ -1,5 +1,5 @@
 
- - title: 'Programování'
+ - title: 'Jazyky'
    high:
     - 'PHP'
     - 'MySQL'
@@ -18,6 +18,9 @@
     - '.NET'
     - 'Nette'
    medium:
+    - 'Slim'
+    - 'Doctrine'
+    - 'Entity Framework'
     - 'Bootstrap'
     - 'jQuery'
    low:
@@ -26,9 +29,11 @@
 
  - title: 'Technologie'
    high:
-    - 'CSS'
-    - 'HTML'
+    - 'Azure'
+    - 'Docker'
     - 'GIT'
+    - 'HTML'
+    - 'CSS'
    medium:
     - 'GPG'
     - 'Jekyll'
@@ -37,7 +42,6 @@
     - 'MS Office'
    low:
     - 'Django'
-    - 'Docker'
     - 'Electron'
     - 'Less/Sass'
     - 'Mercurial'

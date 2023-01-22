@@ -15,6 +15,14 @@
    desc:  'Grafický design a správa webu.'
    group: 'other'
 
+ - title: 'Pásky.cz'
+   image: 'pasky.png'
+   link:  'https://www.pasky.cz/'
+   date:  'Leden 2023'
+   tech:  'PHP, SQL, C#, October CMS'
+   desc:  'Modul slevových akcí do systému October s propojením na modul kalkulátoru.'
+   group: 'pasky'
+
  - title: 'Mart-In'
    image: 'martin.png'
    link:  'https://www.mart-in.cz/'
