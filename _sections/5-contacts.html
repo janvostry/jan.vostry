@@ -69,13 +69,17 @@ name:    contacts
 			});
 		}
 		
+		var objectData = {};
+		$('#contact').serializeArray().forEach(pair => objectData[pair.name] = pair.value);
+		
 		$('#result').slideUp('slow', () => {
 			$.ajax({
+				crossDomain: true,
 				url: $('#contact').attr('action'),
 				type: $('#contact').attr('method'),
-				crossDomain: true,
-				data: $('#contact').serializeArray(),
+				data: JSON.stringify(objectData),
 				dataType: 'jsonp',
+				contentType: 'application/json',
 				success(data, status, xhr) {
 					console.log([data, status, xhr]);
 					if (data === "OK") {
