@@ -6,7 +6,7 @@ name:    contacts
 ---
 
 <div class="col-lg-6">
-	<form class="card mb-4" id="contact" method="POST" action="https://mi3iqye24motfpzod6xqoouhtu0elyqb.lambda-url.eu-north-1.on.aws/">
+	<form class="card mb-4" id="contact" method="POST" action="https://ziayruwlrlck34tpl27qiycxpq0snvto.lambda-url.eu-central-1.on.aws/">
 		<h4 class="card-header">Kontakt</h4>
 		<div class="card-body">
 			<div class="" role="alert" id="result"></div>
@@ -56,43 +56,45 @@ name:    contacts
 <script>
 	$('#contact').submit(event => {
 		event.preventDefault();
-		$('#submit').prop("disabled", true);
 		
-		function result(color, text) {
-			$("#result").removeClass();
-			$("#result").addClass("alert");
-			$("#result").addClass("alert-" + color);
+		function toast(color, text) {
+			$('#result').removeClass();
+			$('#result').addClass('alert');
+			$('#result').addClass('alert-' + color);
 			$('#result').text(text);
-			
-			$('#result').slideDown('slow', () => {
-				$('#submit').prop("disabled", false);
-			});
 		}
 		
 		var objectData = {};
 		$('#contact').serializeArray().forEach(pair => objectData[pair.name] = pair.value);
 		
-		$('#result').slideUp('slow', () => {
-			$.ajax({
-				crossDomain: true,
-				url: $('#contact').attr('action'),
-				type: $('#contact').attr('method'),
-				data: JSON.stringify(objectData),
-				dataType: 'jsonp',
-				contentType: 'application/json',
-				success(data, status, xhr) {
-					console.log([data, status, xhr]);
-					if (data === "OK") {
-						result("success", "Formulář byl úspěšně odeslán.");
-					} else {
-						result("danger", "Formulář se nepodařilo odeslat.");
-					}
-				},
-				error(data, status, error) {
-					console.log([data, status, error]);
-					result("danger", "Formulář se nepodařilo odeslat.");
-				},
-			});
+		$.ajax({
+			crossDomain: true,
+			url: $('#contact').attr('action'),
+			type: $('#contact').attr('method'),
+			data: JSON.stringify(objectData),
+			dataType: 'json',
+			beforeSend(xhr, settings) {
+				console.log('before', xhr, settings);
+				$('#submit').prop('disabled', true);
+				$('#result').slideUp('slow');
+			},
+			success(data, status, xhr) {
+				console.log('success', data, status, xhr);
+				if (data === 'OK') {
+					toast('success', 'Formulář byl úspěšně odeslán.');
+				} else {
+					toast('danger', 'Formulář se nepodařilo odeslat.');
+				}
+			},
+			error(xhr, status, error) {
+				console.log('error', xhr, status, error);
+				toast('danger', 'Formulář se nepodařilo odeslat.');
+			},
+			complete(xhr, status) {
+				console.log('complete', xhr, status);
+				$('#submit').prop('disabled', false);
+				$('#result').slideDown('slow');
+			},
 		});
 	});
 </script>
