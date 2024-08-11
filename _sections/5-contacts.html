@@ -44,7 +44,7 @@ name:    contacts
 			</div>
 		</div>
 		<div class="card-footer text-right">
-			<input type="hiddent" name="website" value="jan.vostry.dev"/>
+			<input type="hidden" name="website" value="jan.vostry.dev"/>
 			<button type="submit" id="submit" class="btn btn-primary">
 				<i class="fa-solid fa-paper-plane"></i>
 				Odeslat
@@ -72,6 +72,7 @@ name:    contacts
 		$('#result').slideUp('slow', () => {
 			$.ajax({
 				url: $('#contact').attr('action'),
+				type: $('#contact').attr('method'),
 				crossDomain: true,
 				data: $('#contact').serializeArray(),
 				dataType: 'jsonp',
