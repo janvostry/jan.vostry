@@ -6,7 +6,7 @@ name:    contacts
 ---
 
 <div class="col-lg-6">
-	<form class="card mb-4" id="contact" method="GET" action="http://posouhvezdi.xf.cz/_/send.php">
+	<form class="card mb-4" id="contact" method="POST" action="https://mi3iqye24motfpzod6xqoouhtu0elyqb.lambda-url.eu-north-1.on.aws/">
 		<h4 class="card-header">Kontakt</h4>
 		<div class="card-body">
 			<div class="" role="alert" id="result"></div>
@@ -44,6 +44,7 @@ name:    contacts
 			</div>
 		</div>
 		<div class="card-footer text-right">
+			<input type="hiddent" name="website" value="jan.vostry.dev"/>
 			<button type="submit" id="submit" class="btn btn-primary">
 				<i class="fa-solid fa-paper-plane"></i>
 				Odeslat
