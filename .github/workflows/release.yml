@@ -19,15 +19,15 @@ jobs:
     - name: Tweaking
       run: |
         rm -rf .github
-        echo jan.vostry.${{ inputs.config-path }} >CNAME
+        echo jan.vostry.${{ inputs.tld }} >CNAME
     - name: Committing
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git checkout --orphan master.${{ inputs.config-path }}
+        git checkout --orphan master.${{ inputs.tld }}
         git add .
         git commit -m Release
     - name: Pushing
       run: |
-        git remote add origin.${{ inputs.config-path }} https://github.com/janvostry/jan.vostry.${{ inputs.config-path }}.git
-        git push --force origin.${{ inputs.config-path }}
+        git remote add origin.${{ inputs.tld }} https://github.com/janvostry/jan.vostry.${{ inputs.tld }}.git
+        git push --force origin.${{ inputs.tld }}
