@@ -17,7 +17,8 @@ $large-shadow-size: 30px;
 
 @mixin BlurredFixedBackground()
 {
-	background-color: RGBA(255, 255, 255, .9);
+	backdrop-filter: blur(8px);
+	background-color: RGBA(255, 255, 255, .8);
 }
 
 @mixin WidthStretch()
@@ -69,6 +70,7 @@ body
 	>nav
 	{
 		@include TopmostShadow();
+		@include BlurredFixedBackground();
 		
 		.nav-link
 		{
