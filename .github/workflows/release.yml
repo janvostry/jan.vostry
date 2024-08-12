@@ -13,6 +13,12 @@ jobs:
     - name: Tweaking
       run: |
         echo jan.vostry.dev >CNAME
+    - name: Switching
+      uses: actions/checkout@v4
+      with:
+        repository: janvostry/jan.vostry.dev
+        ref: 'master.xxx'
+        token:  ${{ secrets.ACTIONS_GITHUB_TOKEN }}
     - name: Pushing
       run: |
         git config user.name "github-actions[bot]"
@@ -20,5 +26,4 @@ jobs:
         git checkout --orphan master.xxx
         git add .
         git commit -m Release
-        git remote add origin.dev https://github.com/janvostry/jan.vostry.dev
-        git push origin.dev --force
+        git push origin --force
