@@ -1,9 +1,0 @@
-name: Release DEV
-run-name: User ${{ github.actor }} is releasing 🚀
-on: workflow_dispatch
-jobs:
-  release-dev:
-    uses: janvostry/jan.vostry/.github/workflows/release.yml@master
-    with:
-      tld: dev
-    secrets: inherit

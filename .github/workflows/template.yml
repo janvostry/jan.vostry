@@ -1,0 +1,33 @@
+name: Template
+on:
+  workflow_call:
+    inputs:
+      tld:
+        required: true
+        type: string
+    secrets:
+      ACTIONS_GITHUB_TOKEN:
+        required: true
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checking
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
+    - name: Tweaking
+      run: |
+        rm -rf .github
+        echo jan.vostry.${{ inputs.tld }} >CNAME
+    - name: Committing
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git checkout --orphan master.${{ inputs.tld }}
+        git add .
+        git commit -m Release
+    - name: Pushing
+      run: |
+        git remote add origin.${{ inputs.tld }} https://github.com/janvostry/jan.vostry.${{ inputs.tld }}.git
+        git push --force origin.${{ inputs.tld }}
