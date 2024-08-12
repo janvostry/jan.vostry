@@ -103,7 +103,7 @@ name:    contacts
 	<article class="card mb-4">
 		<h4 class="card-header">Kde mne najdete</h4>
 		<div class="card-body">
-			<li class="list-group-item">Email: <a href="mailto:jan@vostry.name">{{ site.data.contacts.email }}</a></li>
+			<li class="list-group-item">Email: <a href="mailto:{{ site.data.contacts.email }}">{{ site.data.contacts.email }}</a></li>
 			<li class="list-group-item">LinkedIn: <a href="https://cz.linkedin.com/in/{{ site.data.contacts.linkedin | url_encode }}">{{ site.data.contacts.linkedin }}</a></li>
 		</div>
 	</article>
