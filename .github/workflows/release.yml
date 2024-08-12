@@ -1,7 +1,13 @@
 name: Release
 run-name: ${{ github.actor }} is releasing 🚀
-on: []
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
+
   dev-release:
     runs-on: ubuntu-latest
     steps:
