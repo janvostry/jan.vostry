@@ -5,12 +5,12 @@ jobs:
   release-dev:
     uses: janvostry/jan.vostry/.github/workflows/template.yml@master
     with:
-      tld: dev
+      environment: development
+      top-level-domain: dev
     secrets: inherit
-    environment: development
   release-name:
     uses: janvostry/jan.vostry/.github/workflows/template.yml@master
     with:
-      tld: name
+      environment: production
+      top-level-domain: name
     secrets: inherit
-    environment: production

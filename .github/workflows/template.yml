@@ -2,7 +2,11 @@ name: Template
 on:
   workflow_call:
     inputs:
-      tld:
+      environment:
+        required: true
+        type: string
+    inputs:
+      top-level-domain:
         required: true
         type: string
     secrets:
@@ -11,6 +15,7 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
     steps:
     - name: Checking
       uses: actions/checkout@v4
@@ -19,15 +24,15 @@ jobs:
     - name: Tweaking
       run: |
         rm -rf .github
-        echo jan.vostry.${{ inputs.tld }} >CNAME
+        echo jan.vostry.${{ inputs.top-level-domain }} >CNAME
     - name: Committing
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git checkout --orphan master.${{ inputs.tld }}
+        git checkout --orphan master.${{ inputs.top-level-domain }}
         git add .
         git commit -m Release
     - name: Pushing
       run: |
-        git remote add origin.${{ inputs.tld }} https://github.com/janvostry/jan.vostry.${{ inputs.tld }}.git
-        git push --force origin.${{ inputs.tld }}
+        git remote add origin.${{ inputs.top-level-domain }} https://github.com/janvostry/jan.vostry.${{ inputs.top-level-domain }}.git
+        git push --force origin.${{ inputs.top-level-domain }}
