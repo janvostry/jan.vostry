@@ -1,0 +1,22 @@
+name: Release
+run-name: ${{ github.actor }} is releasing 🚀
+on: []
+jobs:
+  dev-release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checking
+      uses: actions/checkout@v4
+    - name: Tweaking
+      run: |
+        echo jan.vostry.dev >CNAME
+    - name: Pushing
+      uses: actions/checkout@v4
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git checkout --orphan master.xxx
+        git add .
+        git commit -m Release
+        git remote add origin.dev https://github.com/janvostry/jan.vostry.dev
+        git push origin.dev --force
