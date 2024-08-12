@@ -4,7 +4,7 @@ run-name: ${{ github.actor }} is releasing 🚀
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
 
