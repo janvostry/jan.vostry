@@ -3,14 +3,14 @@ run-name: User ${{ github.actor }} is releasing 🚀
 on: workflow_dispatch
 jobs:
   release-dev:
-    environment: development
     uses: janvostry/jan.vostry/.github/workflows/template.yml@master
     with:
       tld: dev
     secrets: inherit
+    environment: development
   release-name:
-    environment: production
     uses: janvostry/jan.vostry/.github/workflows/template.yml@master
     with:
       tld: name
     secrets: inherit
+    environment: production
