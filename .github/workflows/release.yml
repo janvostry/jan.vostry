@@ -1,11 +1,15 @@
 name: Release
-run-name: ${{ github.actor }} is releasing 🚀
-
-on: workflow_dispatch
-
+on:
+  workflow_call:
+    inputs:
+      tld:
+        required: true
+        type: string
+    secrets:
+      ACTIONS_GITHUB_TOKEN:
+        required: true
 jobs:
-
-  dev-release:
+  release:
     runs-on: ubuntu-latest
     steps:
     - name: Checking
@@ -15,15 +19,15 @@ jobs:
     - name: Tweaking
       run: |
         rm -rf .github
-        echo jan.vostry.dev >CNAME
+        echo jan.vostry.${{ inputs.config-path }} >CNAME
     - name: Committing
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git checkout --orphan master.dev
+        git checkout --orphan master.${{ inputs.config-path }}
         git add .
         git commit -m Release
     - name: Pushing
       run: |
-        git remote add origin.dev https://github.com/janvostry/jan.vostry.dev.git
-        git push --force origin.dev
+        git remote add origin.${{ inputs.config-path }} https://github.com/janvostry/jan.vostry.${{ inputs.config-path }}.git
+        git push --force origin.${{ inputs.config-path }}
