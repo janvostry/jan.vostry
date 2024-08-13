@@ -1,7 +1,9 @@
 
 <div id="{{ page.name }}" class="container">
 	<section>
-		<h3 class="mb-5">{{ page.title }}</h3>
+		{% unless page.title == 'None' %}
+			<h3 class="mb-5">{{ page.title }}</h3>
+		{% endunless %}
 		{{ content }}
 	</section>
 </div>

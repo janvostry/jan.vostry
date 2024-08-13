@@ -1,5 +1,6 @@
 ---
 unicode: AÁBCČDĎEÉĚFGHChIÍJKLMNŇOÓPQRŘSŠTŤUÚŮVWXYÝZŽ
+layout:  section/bare
 title:   None
 name:    none
 ---
@@ -52,4 +53,23 @@ name:    none
     
 {% endcapture %}
 
-<!--{{ latte | replace: '(', site.data.tools.brace.l | replace: ')', site.data.tools.brace.r }}-->
+<div class="row">
+	<div class="col">
+		<article class="card">
+			{% if jekyll.environment == 'development' %}
+				<div class="card-body">
+					<code>{{
+						latte
+						| replace: '(', '&#123;'
+						| replace: ')', '&#125;'
+						| replace: ' ', '&nbsp;'
+						| newline_to_br
+					}}</code>
+				</div>
+			{% else %}
+				<div class="card-body" id="latte">
+				</div>
+			{% endif %}
+		</article>
+	</div>
+</div>

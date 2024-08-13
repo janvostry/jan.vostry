@@ -5,7 +5,7 @@ title:   Jan Vostrý
 ---
 
 {% for section in site.sections %}
-	{% unless section.name == 'none' %}
+	{% if section.name == 'none' %}
 		{{ section }}
-	{% endunless %}
+	{% endif %}
 {% endfor %}

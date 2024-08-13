@@ -69,8 +69,8 @@ body
 	
 	>nav
 	{
-		@include TopmostShadow();
 		@include BlurredFixedBackground();
+		@include TopmostShadow();
 		
 		.nav-link
 		{
@@ -130,6 +130,14 @@ body
 				{
 					font-size: 1rem;
 					margin: 0.25em 0;
+				}
+				
+				#latte {
+					background-image: url({{ '/assets/image/latte.svg' | absolute_url }});
+					background-position: 50% 50%;
+					background-size: 50% 100%;
+					background-repeat: no-repeat;
+					padding-top: 50%;
 				}
 			}
 		}
