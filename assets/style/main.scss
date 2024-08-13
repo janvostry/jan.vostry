@@ -132,7 +132,8 @@ body
 					margin: 0.25em 0;
 				}
 				
-				#latte {
+				#latte
+				{
 					background-image: url({{ '/assets/image/latte.svg' | absolute_url }});
 					background-position: 50% 50%;
 					background-size: 50% 100%;
