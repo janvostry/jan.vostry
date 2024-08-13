@@ -6,7 +6,7 @@ name:    contacts
 ---
 
 <div class="col-lg-6">
-	<form class="card mb-4" id="contact" method="POST" action="https://ziayruwlrlck34tpl27qiycxpq0snvto.lambda-url.eu-central-1.on.aws/">
+	<form class="card mb-4" id="contact" method="POST" action="https://vostry.xf.cz/script/send.php">
 		<h4 class="card-header">Kontakt</h4>
 		<div class="card-body">
 			<div class="" role="alert" id="result"></div>
@@ -71,7 +71,7 @@ name:    contacts
 			crossDomain: true,
 			url: $('#contact').attr('action'),
 			type: $('#contact').attr('method'),
-			data: JSON.stringify(objectData),
+			data: objectData,
 			dataType: 'json',
 			beforeSend(xhr, settings) {
 				console.log('before', xhr, settings);
